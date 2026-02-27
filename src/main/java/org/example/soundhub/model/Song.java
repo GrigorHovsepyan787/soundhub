@@ -39,11 +39,11 @@ public class Song {
 
     @ManyToMany
     @JoinTable(
-            name = "song_artist",
+            name = "song_performer",
             joinColumns = @JoinColumn(name = "song_id"),
-            inverseJoinColumns = @JoinColumn(name = "artist_id")
+            inverseJoinColumns = @JoinColumn(name = "performer_id")
     )
-    private List<Artist> artists;
+    private List<Performer> performers;
 
     @ManyToOne
     @JoinColumn(name = "album_id")

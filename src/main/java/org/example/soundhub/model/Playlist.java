@@ -38,6 +38,9 @@ public class Playlist {
         createdDate = LocalDateTime.now();
     }
 
+    //true = public, false = private
+    private boolean isPublic;
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

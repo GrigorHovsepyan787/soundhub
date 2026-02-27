@@ -5,30 +5,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "artist")
-public class Artist {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
-    private String name;
+public class Artist extends Performer{
 
     private String surname;
 
     @Column(nullable = true)
     private String nickname;
 
-    private String bio;
-
-    private String pictureName;
-
-    @ManyToMany(mappedBy = "artists")
-    private List<Song> songs;
+    LocalDate birthdate;
 }
