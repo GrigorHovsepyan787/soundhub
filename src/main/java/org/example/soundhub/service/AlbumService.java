@@ -1,11 +1,8 @@
 package org.example.soundhub.service;
 
 import org.example.soundhub.model.Album;
-import org.example.soundhub.model.Song;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-
-import java.time.LocalDate;
 
 public interface AlbumService {
 
@@ -15,7 +12,7 @@ public interface AlbumService {
 
     Album getById(int id);
 
-    Album update(int id, String title, String artist, LocalDate releaseDate, String coverImageName, String coverImage);
+    Album update(int id, Album updatedAlbum);
 
     void deleteById(int id);
 
@@ -23,5 +20,5 @@ public interface AlbumService {
 
     Album removeSongFromAlbum(int albumId, int songId);
 
-    Page<Album> findByArtistId(int artistId, Pageable pageable);
+    Page<Album> findByPerformerId(int artistId, Pageable pageable);
 }
